@@ -1,0 +1,93 @@
+@import "./styles/colors.scss";
+
+body {
+  margin: 0;
+  font-family: "Roboto Mono", monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.dark {
+  color: $primary;
+  background-color: $body-background;
+
+  #projects {
+    .project-item {
+      border-bottom: 1px dashed rgb(78, 78, 78);
+    }
+
+    .project-item:hover {
+      border: 1px solid rgb(48, 48, 48);
+    }
+  }
+
+  section {
+    border-bottom: 1px solid #2c2c2c;
+  }
+
+  h4 {
+    color: rgb(218, 216, 216);
+    font-weight: bolder;
+  }
+
+  p {
+    color: rgb(218, 216, 216);
+  }
+
+  #google {
+    background-color: #161b22;
+
+    input {
+      background-color: #1b1b1a;
+      color: #ffffff;
+    }
+  }
+
+  .buttons {
+    .button {
+      color: #cfcec5;
+    }
+  }
+}
+
+.light {
+  background-color: $background-light;
+
+  section {
+    border-bottom: 1px solid #eeeeee;
+  }
+
+  #projects {
+    .project-item:hover {
+      border: 1px solid rgb(238, 238, 238);
+    }
+  }
+
+  #google {
+    background-color: white;
+    input {
+      background-color: white;
+      color: black;
+    }
+
+    .buttons {
+      .button {
+        background-color: #f8f9fa;
+        color: black;
+      }
+
+      .button:hover {
+        border: 1px solid #c8c8c8;
+      }
+
+      .button:focus {
+        border: 1px solid #4885ed;
+      }
+    }
+  }
+}

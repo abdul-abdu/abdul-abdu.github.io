@@ -1,0 +1,20 @@
+@import "./colors.scss";
+
+footer {
+  margin: 0 0 100px 0;
+  width: 100%;
+  text-align: center;
+
+  .copyright {
+    color: rgb(163, 163, 163);
+    text-align: start;
+    margin: 10px 0;
+    font-size: 11px;
+  }
+
+  img {
+    margin: 0 5px;
+    background: $primary;
+    border-radius: 12px;
+  }
+}

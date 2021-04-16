@@ -1,0 +1,36 @@
+#projects {
+  a {
+    color: white;
+    margin: 0 10px;
+    font-size: 12px;
+  }
+
+  h5 {
+    margin: 0;
+  }
+
+  p {
+    color: rgb(163, 163, 163);
+  }
+
+  .project-item {
+    padding: 20px 0;
+    border-bottom: 1px dashed rgb(163, 163, 163);
+    overflow: hidden;
+  }
+
+  .content-wrap {
+    margin: 0 auto;
+  }
+
+  .project-item .badge {
+    margin: 0 1px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .project-item .project-img {
+      float: left;
+      margin-right: 15px;
+    }
+  }
+}

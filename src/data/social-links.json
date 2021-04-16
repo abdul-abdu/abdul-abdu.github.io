@@ -1,0 +1,27 @@
+[
+  {
+    "link": "https://www.linkedin.com/in/abdugaffor-abdurahimov/",
+    "icon": "https://image0.flaticon.com/icons/png/128/1409/1409945.png",
+    "name": "linkedin"
+  },
+  {
+    "link": "https://stackoverflow.com/users/12525065/abdugaffor-abdurahimov",
+    "icon": "https://image.flaticon.com/icons/png/128/2111/2111628.png",
+    "name": "stackoverflow"
+  },
+  {
+    "link": "https://github.com/abdugaffor-abdurahimov/",
+    "icon": "https://image.flaticon.com/icons/png/128/779/779088.png",
+    "name": "github"
+  },
+  {
+    "link": "https://www.hackerrank.com/abdugaffor",
+    "icon": "https://img.icons8.com/windows/2x/hackerrank.png",
+    "name": "hakerrank"
+  },
+  {
+    "link": "https://t.me/AbdugafforAbdurahimov",
+    "icon": "https://image.flaticon.com/icons/png/128/2504/2504941.png",
+    "name": "telegram"
+  }
+]

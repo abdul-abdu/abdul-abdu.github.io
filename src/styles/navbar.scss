@@ -1,0 +1,59 @@
+@import "./colors.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  font-family: "segoe ui";
+}
+
+.nav {
+  height: 40px;
+  background-color: #282c34;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+
+  .nav-header {
+    .nav-title {
+      display: inline-block;
+      font-size: 22px;
+      color: #fff;
+      padding: 10px;
+    }
+  }
+
+  .nav-links {
+    // font-size: 18px;
+
+    button {
+      background-color: inherit;
+      border: none;
+      color: white;
+      padding: 10px;
+      display: inline;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      color: rgb(0, 247, 95);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      button {
+        font-size: 13px;
+        padding: 10px 8px;
+      }
+    }
+  }
+}

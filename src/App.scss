@@ -1,0 +1,28 @@
+/* Primmary color = rgba(75, 185, 167, 0.781) */
+/* Secondary color = rgb(163, 163, 163) */
+/* #FF3F81 */
+@import "./styles/colors.scss";
+
+.App {
+  padding: 10px;
+  min-height: 100vh;
+  width: 100%;
+
+  h4 {
+    font-weight: bolder;
+  }
+}
+
+.general {
+  color: white;
+}
+
+section {
+  margin-top: 60px;
+  max-width: 900px;
+}
+
+ul {
+  margin: 20px;
+  padding: 0;
+}
