@@ -101,12 +101,7 @@ const Google = () => {
       </header>
 
       <div className="google-logo">
-        <img
-          alt="Google"
-          src={
-            "https://raw.githubusercontent.com/abdugaffor-abdurahimov/abdugaffor-abdurahimov/main/public/google.png"
-          }
-        />
+        <img alt="Google" src={process.env.PUBLIC_URL + "google.png"} />
       </div>
 
       <div className="searchbar">
