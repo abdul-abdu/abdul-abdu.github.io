@@ -4,7 +4,6 @@ import Loader from "../components/Loader";
 import Navbar from "../components/Navbar";
 import ScrollProgress from "../components/ScrollProgress";
 import ScrollToTop from "../components/ScrollToTop";
-import useSetloader from "../hooks/useSetloader";
 import Container from "../layouts/Container";
 import Education from "../sections/Education";
 import Footer from "../sections/Footer";
@@ -13,9 +12,8 @@ import Projects from "../sections/Projects";
 import TechnicalSkills from "../sections/TechnicalSkills";
 import { Link } from "react-router-dom";
 
-export default function Home() {
+export default function Home({ loading }) {
   const [darkMode, setDarkMode] = useState(true);
-  const loading = useSetloader();
   const sections = [Main, Education, TechnicalSkills, Projects, Footer];
   return (
     <div className={`App ${darkMode ? "dark" : "light"}`}>
@@ -35,10 +33,11 @@ export default function Home() {
           <Link
             to="/cv"
             style={{
-              color: "yellow",
-              position: "relative",
-              bottom: "100px",
-              left: "100px",
+              color: "dark",
+              position: "fixed",
+              bottom: "30px",
+              left: "10px",
+              background: "white",
             }}
           >
             RESUME

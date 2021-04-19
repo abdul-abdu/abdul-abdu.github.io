@@ -1,12 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 @import "../styles/colors.scss";
 
 .resume_wrapper {
   display: flex;
-  width: 800px;
-  margin: 50px auto;
+  width: 793px;
+  margin: 0px auto 0px auto;
   background: #fff;
-  // height: 1122px;
+  min-height: 1122.519685px;
   border: 1px solid #84838b;
 
   section {
@@ -48,7 +47,6 @@
   }
 
   .resume_left {
-    width: 55%;
     background: $resume-primary;
     color: rgb(226, 226, 226);
 
@@ -73,7 +71,7 @@
 
   .resume_item {
     padding: 20px 0;
-    border-bottom: 1px solid $resume-primary;
+    border-bottom: 0px solid $resume-primary;
   }
 
   .resume_left .resume_namerole {
@@ -81,12 +79,12 @@
   }
 
   .resume_left .resume_namerole .role {
-    color: #84838b;
+    color: #e9e9e9;
   }
 
   .resume_right {
     width: 65%;
-    padding: 20px 40px;
+    padding: 20px 10px;
     color: $resume-primary;
 
     .resume_namerole .name {
@@ -146,46 +144,46 @@
   }
 }
 
-@media screen and (max-width: 800px) {
-  .resume_wrapper .resume_right .resume_namerole {
-    display: none;
-  }
-  .resume_wrapper .resume_left .resume_namerole {
-    display: block;
-  }
-  .resume_wrapper {
-    width: 100%;
-    flex-direction: column;
-  }
-  .resume_wrapper .resume_left,
-  .resume_wrapper .resume_right {
-    width: 100%;
-  }
+// @media screen and (max-width: 800px) {
+//   .resume_wrapper .resume_right .resume_namerole {
+//     display: none;
+//   }
+//   .resume_wrapper .resume_left .resume_namerole {
+//     display: block;
+//   }
+//   .resume_wrapper {
+//     width: 100%;
+//     flex-direction: column;
+//   }
+//   .resume_wrapper .resume_left,
+//   .resume_wrapper .resume_right {
+//     width: 100%;
+//   }
 
-  .resume_wrapper {
-    margin: 0;
-  }
-}
+//   .resume_wrapper {
+//     margin: 0;
+//   }
+// }
 
-@media screen and (max-width: 424px) {
-  .resume_wrapper .resume_right {
-    padding: 20px 30px;
-  }
-  .resume_wrapper .resume_right .resume_data {
-    flex-direction: column;
-  }
-  .resume_wrapper .resume_right .resume_data .year {
-    padding: 0;
-    margin-bottom: 5px;
-    width: 100%;
-    color: #0175b2;
-  }
-  .resume_wrapper .resume_right .resume_data .year:before,
-  .resume_wrapper .resume_right .resume_data .year:after {
-    display: none;
-  }
-  .resume_wrapper .resume_right .resume_data .content {
-    width: 100%;
-    padding: 0;
-  }
-}
+// @media screen and (max-width: 424px) {
+//   .resume_wrapper .resume_right {
+//     padding: 20px 30px;
+//   }
+//   .resume_wrapper .resume_right .resume_data {
+//     flex-direction: column;
+//   }
+//   .resume_wrapper .resume_right .resume_data .year {
+//     padding: 0;
+//     margin-bottom: 5px;
+//     width: 100%;
+//     color: #0175b2;
+//   }
+//   .resume_wrapper .resume_right .resume_data .year:before,
+//   .resume_wrapper .resume_right .resume_data .year:after {
+//     display: none;
+//   }
+//   .resume_wrapper .resume_right .resume_data .content {
+//     width: 100%;
+//     padding: 0;
+//   }
+// }
