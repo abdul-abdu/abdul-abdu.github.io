@@ -5,6 +5,11 @@ body {
   font-family: "Roboto Mono", monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  svg {
+    width: 20px;
+    margin-right: 4px;
+  }
 }
 
 code {
