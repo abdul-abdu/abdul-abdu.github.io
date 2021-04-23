@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { ArrowIcon } from "./icons";
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
@@ -27,21 +28,14 @@ export default function ScrollToTop() {
   }, []);
 
   return (
-    <div style={{ position: "fixed", bottom: "10px", right: "10px" }}>
-      {isVisible && (
-        <div onClick={scrollToTop}>
-          <i
-            style={{
-              border: "solid #34a853",
-              borderWidth: "0 10px 10px 0",
-              display: "inline-block",
-              padding: "10px",
-              transform: "rotate(-135deg)",
-              cursor: "pointer",
-            }}
-          ></i>
-        </div>
-      )}
+    <div
+      style={{
+        position: "fixed",
+        bottom: "15px",
+        right: "10px",
+      }}
+    >
+      {isVisible && <ArrowIcon onClick={scrollToTop} />}
     </div>
   );
 }

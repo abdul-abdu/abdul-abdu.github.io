@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const CV = () => {
   return (
     <React.Fragment>
-      <div className="resume_wrapper">
+      <div className="resume_wrapper" id="resume">
         <div className="resume_left">
           <div className="resume_image">
             <img
@@ -110,13 +110,23 @@ const CV = () => {
         </div>
       </div>
 
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex", justifyContent: "center" }}>
         <Link
           to="/"
-          style={{ background: "yellow", margin: "10px auto 40px auto" }}
+          style={{
+            background: "yellow",
+            margin: "10px",
+            border: "1px solid gray",
+          }}
         >
           Go Back
         </Link>
+        <button
+          style={{ background: "yellow", margin: "10px", padding: "2px" }}
+          onClick={() => window.print()}
+        >
+          Print CV
+        </button>
       </div>
     </React.Fragment>
   );
