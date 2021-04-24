@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import Google from "../components/Google";
 import Loader from "../components/Loader";
 import Navbar from "../components/Navbar";
@@ -11,18 +11,20 @@ import Main from "../sections/Main";
 import Projects from "../sections/Projects";
 import TechnicalSkills from "../sections/TechnicalSkills";
 import { Link } from "react-router-dom";
+import { ThemeContext, Themes } from "../contexts/theme";
 
 export default function Home({ loading }) {
-  const [darkMode, setDarkMode] = useState(true);
+  const [theme] = useContext(ThemeContext);
   const sections = [Main, Education, TechnicalSkills, Projects, Footer];
+
   return (
-    <div className={`App ${darkMode ? "dark" : "light"}`}>
+    <div className={`App ${theme === Themes.dark ? "dark" : "light"}`}>
       {loading ? (
         <Loader />
       ) : (
         <>
           <ScrollProgress />
-          <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+          <Navbar />
           <Google />
 
           {sections.map((section, idx) => (

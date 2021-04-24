@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css?family=Audiowide&display=swap");
+
+#not-found {
+  max-height: 100vh;
+
+  h1 {
+    font-size: 15vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  a {
+    font-size: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

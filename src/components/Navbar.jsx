@@ -3,12 +3,12 @@ import "../styles/navbar.scss";
 import ThemeToggler from "./ThemeToggler";
 import Link from "../layouts/Link";
 
-const Navbar = (props) => {
+const Navbar = () => {
   return (
     <div className="nav">
       <div className="nav-header">
         <div className="nav-title">
-          <ThemeToggler {...props} />
+          <ThemeToggler />
         </div>
       </div>
 
