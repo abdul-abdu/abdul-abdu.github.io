@@ -1,16 +1,16 @@
-import { Layout } from "@/components/Layout"
+import { MainLayout } from "@/components"
 import { IDS } from "@/constants"
 
 export default function About() {
   return (
     <section id={IDS.ABOUT} className="p-5">
-      <Layout>
+      <MainLayout>
         <h4>Who am I ?</h4>
         <br />
         <p>
           <span>
             👋 Hi there! Welcome to my LinkedIn profile. I'm a passionate and
-            experienced React, React Native, and Next.js Developer with over 3
+            experienced React, Next.js, and React Native Developer with over 3
             years of expertise in creating robust and scalable web and mobile
             applications.
           </span>
@@ -120,7 +120,7 @@ export default function About() {
             look forward to connecting with you!
           </span>
         </p>
-      </Layout>
+      </MainLayout>
     </section>
   )
 }
