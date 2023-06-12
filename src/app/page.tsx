@@ -1,9 +1,10 @@
-import { Footer } from "@/sections";
-import Image from "next/image";
+import { About, Footer, Navbar } from "@/sections";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main>
+      <Navbar />
+      <About />
       <Footer />
     </main>
   );

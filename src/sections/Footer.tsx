@@ -15,7 +15,7 @@ const LINKS = [
     name: "stackoverflow",
   },
   {
-    link: "https://github.com/abdugaffor-abdurahimov/",
+    link: "https://github.com/abdul-abdu",
     icon: `/github.svg`,
     name: "github",
   },
@@ -27,27 +27,27 @@ const LINKS = [
   {
     link: "https://leetcode.com/abdugaffor/",
     icon: `/leetcode.svg`,
-    name: "telegram",
+    name: "leetcode",
   },
   {
     link: "https://t.me/AbdugafforAbdurahimov",
     icon: "/telegram.svg",
     name: "telegram",
   },
+  {
+    link: "mailto:abdugaffor.abdurakhimov@gmail.com",
+    icon: "/gmail.svg",
+    name: "telegram",
+  },
 ];
 
 export default function Footer() {
   return (
-    <footer className="relative w-full" id={IDS.FOOTER}>
-      <div className="flex justify-center my-8 space-x-6">
+    <footer id={IDS.FOOTER} className="mt-1000">
+      <div className="flex justify-center my-100">
         {LINKS.map(({ icon, link, name }) => (
-          <Link
-            href={link}
-            className="hover:text-gray-500"
-            key={name}
-            style={{ margin: "10px" }}
-          >
-            <Image src={icon} width={35} height={35} alt={name} />
+          <Link href={link} key={name} className="mx-1" target="_blank">
+            <Image src={icon} width={35} height={35} alt={name} priority />
           </Link>
         ))}
       </div>

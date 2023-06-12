@@ -1,3 +1,4 @@
 export const IDS = {
-  FOOTER: "FOOTE",
+  FOOTER: "FOOTER",
+  ABOUT: "ABOUT",
 };
