@@ -1,5 +1,5 @@
-import { ScrollLink } from "@/components";
-import { IDS } from "@/constants";
+import { ScrollLink, ThemeToggler } from "@/components"
+import { IDS } from "@/constants"
 
 const ITEMS = [
   {
@@ -7,7 +7,7 @@ const ITEMS = [
     title: "About",
     href: `#${IDS.ABOUT}`,
   },
-];
+]
 
 export default function Navbar() {
   return (
@@ -34,9 +34,13 @@ export default function Navbar() {
                 Contact
               </ScrollLink>
             </div>
+
+            <ul className="flex space-x-4s">
+              <ThemeToggler />
+            </ul>
           </div>
         </div>
       </div>
     </nav>
-  );
+  )
 }

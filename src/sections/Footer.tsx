@@ -37,7 +37,7 @@ const LINKS = [
   {
     link: "mailto:abdugaffor.abdurakhimov@gmail.com",
     icon: "/gmail.svg",
-    name: "telegram",
+    name: "gmail",
   },
 ];
 
