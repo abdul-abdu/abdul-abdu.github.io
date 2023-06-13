@@ -9,7 +9,7 @@ export default function About() {
         <br />
         <p>
           <span>
-            👋 Hi there! Welcome to my LinkedIn profile. I'm a passionate and
+            👋 Hi there! Welcome to my website. I'm a passionate and
             experienced React, Next.js, and React Native Developer with over 3
             years of expertise in creating robust and scalable web and mobile
             applications.
