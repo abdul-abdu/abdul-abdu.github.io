@@ -1,7 +1,7 @@
-import { IDS } from "@/constants";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+import { IDS } from "@/constants"
+import Image from "next/image"
+import Link from "next/link"
+import React from "react"
 
 const LINKS = [
   {
@@ -18,6 +18,7 @@ const LINKS = [
     link: "https://github.com/abdul-abdu",
     icon: `/github.svg`,
     name: "github",
+    className: "bg-white rounded",
   },
   {
     link: "https://www.hackerrank.com/abdugaffor",
@@ -39,15 +40,22 @@ const LINKS = [
     icon: "/gmail.svg",
     name: "gmail",
   },
-];
+]
 
 export default function Footer() {
   return (
     <footer id={IDS.FOOTER} className="mt-1000">
       <div className="flex justify-center my-100">
-        {LINKS.map(({ icon, link, name }) => (
+        {LINKS.map(({ icon, link, name, className }) => (
           <Link href={link} key={name} className="mx-1" target="_blank">
-            <Image src={icon} width={35} height={35} alt={name} priority />
+            <Image
+              src={icon}
+              width={35}
+              height={35}
+              alt={name}
+              priority
+              className={className}
+            />
           </Link>
         ))}
       </div>
@@ -60,5 +68,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  );
+  )
 }
