@@ -5,18 +5,16 @@ import { About, Experience, Footer, Navbar, Projects } from "@/sections"
 
 export default function Home() {
   return (
-    <Providers>
-      <main className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <Navbar />
-        <About />
-        <Experience />
-        <Projects />
-        <Footer />
-        <Particles
-          className="absolute inset-0 -z-10 animate-fade-in"
-          quantity={1000}
-        />
-      </main>
-    </Providers>
+    <main className="mx-auto max-w-7xl sm:px-6 lg:px-8">
+      <Navbar />
+      <About />
+      <Experience />
+      <Projects />
+      <Footer />
+      <Particles
+        className="absolute inset-0 -z-10 animate-fade-in"
+        quantity={1000}
+      />
+    </main>
   )
 }

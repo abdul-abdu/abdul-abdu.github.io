@@ -3,7 +3,7 @@ import { IDS } from "@/constants"
 
 export default function About() {
   return (
-    <section id={IDS.ABOUT} className="p-5">
+    <section id={IDS.ABOUT} className="p-5 font-serif text-lg">
       <h4>Who am I ?</h4>
       <br />
       <p>
