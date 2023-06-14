@@ -44,7 +44,7 @@ const LINKS = [
 
 export default function Footer() {
   return (
-    <footer id={IDS.FOOTER} className="mt-1000">
+    <footer id={IDS.FOOTER} className="mt-1000 text-slate-400">
       <div className="flex justify-center my-100">
         {LINKS.map(({ icon, link, name, className }) => (
           <Link href={link} key={name} className="mx-1" target="_blank">
@@ -62,8 +62,14 @@ export default function Footer() {
       <div className="mx-auto w-full max-w-7xl px-8">
         <div className="mt-12 flex w-full flex-col items-center justify-center border-t border-blue-gray-50 py-4 md:flex-row md:justify-between">
           <small className="mb-4 text-center font-normal text-blue-gray-900 md:mb-0">
-            &copy;{new Date().getFullYear()}
-            <a href="#"> Abdugaffor Abdurakhimov</a>. All Rights Reserved.
+            &copy; Abdugaffor Abdurakhimov Website {new Date().getFullYear()}.
+            Website built using Next.js & TailwindCSS
+            <Link
+              href="https://github.com/abdul-abdu/abdul-abdu.github.io"
+              target="_blank"
+            >
+              (view source)
+            </Link>
           </small>
         </div>
       </div>
