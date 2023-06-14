@@ -14,6 +14,11 @@ const ITEMS = [
   },
   {
     id: 3,
+    title: "Projects",
+    href: `#${IDS.PROJECTS}`,
+  },
+  {
+    id: 4,
     title: "Contact",
     href: `#${IDS.FOOTER}`,
   },
@@ -21,7 +26,7 @@ const ITEMS = [
 
 export default function Navbar() {
   return (
-    <nav className="bg-gradient-to-r from-slate-600 to-transparent w-full top-0 py-4">
+    <nav className="w-full top-0 py-4">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
           <div className="flex w-full justify-between align-baseline">
