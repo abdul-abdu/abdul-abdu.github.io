@@ -12,7 +12,7 @@ const EXPERIENCES = [
       website: "https://danads.com/",
     },
     startDate: "Apr 2023",
-    endDate: "Present",
+    endDate: "Present (Fulltime)",
     role: "Frontend developer",
     duties: ["- Developing NextJs application"],
   },
@@ -23,7 +23,7 @@ const EXPERIENCES = [
       website: "https://innocenter.uz/",
     },
     startDate: "Aprl 2023",
-    endDate: "Feb 2023",
+    endDate: "Feb 2023 (Contract)",
     role: "Frontend developer",
     duties: [
       "- Developed ReactJs kindergarten web app (Currently has more than 20k active users in Uzbekistan)",
@@ -37,7 +37,7 @@ const EXPERIENCES = [
       website: "https://inoviagroup.se/",
     },
     startDate: "May 2021",
-    endDate: "Jan 2023",
+    endDate: "Jan 2023 (Fulltime)",
     role: "Frontend developer",
     duties: [
       "- Developed ReactJs applications.",
@@ -113,11 +113,11 @@ function ExperienceItem({
       </span>
       <div className="ml-5 my-5">
         <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">
-          {title}
+          {title} at
           <a className="ml-2" href={href}>
             {companyName}
           </a>
-          <small className="ml-1">(Full-time)</small>
+          {/* <small className="ml-1">(Full-time)</small> */}
           {current && (
             <span className="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-3">
               Current
