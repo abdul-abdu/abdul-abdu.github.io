@@ -113,7 +113,10 @@ function ExperienceItem({
       </span>
       <div className="ml-5 my-5">
         <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">
-          {title} <a className="ml-2" href={href}>{companyName}</a>
+          {title}
+          <a className="ml-2" href={href}>
+            {companyName}
+          </a>
           <small className="ml-1">(Full-time)</small>
           {current && (
             <span className="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-3">
