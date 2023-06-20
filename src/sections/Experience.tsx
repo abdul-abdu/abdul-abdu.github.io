@@ -48,6 +48,20 @@ const EXPERIENCES = [
       "- Developed end-to-end test cases with cypress",
     ],
   },
+  {
+    company: {
+      name: "Epiccode",
+      logo: "/epiccode.jpeg",
+      website: "https://epicode.com/",
+    },
+    startDate: "October 2020",
+    endDate: "May 2021",
+    role: "MERN developer",
+    duties: [
+      "- Created Full Stack e-commerse ",
+      "- Created Admin panel for ecomerse",
+    ],
+  },
 ]
 
 export default function Experience() {
