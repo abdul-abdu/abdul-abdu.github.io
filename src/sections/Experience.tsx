@@ -117,11 +117,11 @@ function ExperienceItem({
       <span className="absolute flex items-center justify-center w-10 h-10 bg-white rounded-full -left-5">
         <Link href={href}>
           <Image
-            className="rounded-full"
+            className="rounded-full border-2"
             src={image}
             width={40}
             height={40}
-            alt="danads_logo"
+            alt={`${title}-logo`}
           />
         </Link>
       </span>
@@ -131,7 +131,6 @@ function ExperienceItem({
           <a className="ml-2" href={href}>
             {companyName}
           </a>
-          {/* <small className="ml-1">(Full-time)</small> */}
           {current && (
             <span className="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300 ml-3">
               Current
