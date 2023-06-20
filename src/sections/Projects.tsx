@@ -135,7 +135,7 @@ export default function Projects() {
           {PROJECTS.map((project, idx) => (
             <div
               key={idx}
-              className="py-20 border-b-2 border-dashed border-gray-400 overflow-hidden"
+              className="py-10 border-b-2 border-dashed border-gray-400 overflow-hidden"
             >
               {project.liveUrl && (
                 <Link href={project.liveUrl}>
@@ -161,12 +161,27 @@ export default function Projects() {
               ))}
 
               <div>
-                <Link href={project.feUrl}>Github frontend</Link>
+                <a
+                  className="mx-2 font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                  href={project.feUrl}
+                >
+                  Github frontend
+                </a>
                 {project.beUrl && (
-                  <Link href={project.beUrl}>Github backend</Link>
+                  <Link
+                    className="mx-2 font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                    href={project.beUrl}
+                  >
+                    Github backend
+                  </Link>
                 )}
                 {project.liveUrl && (
-                  <Link href={project.liveUrl}>See Live</Link>
+                  <Link
+                    className="mx-2 font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                    href={project.liveUrl}
+                  >
+                    See Live
+                  </Link>
                 )}
               </div>
             </div>
