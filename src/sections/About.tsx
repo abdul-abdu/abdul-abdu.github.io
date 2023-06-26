@@ -1,19 +1,30 @@
 import { MainLayout } from "@/components"
 import { IDS } from "@/constants"
+import Image from "next/image"
 
 export default function About() {
   return (
     <section id={IDS.ABOUT} className="p-5 font-serif text-lg">
+      <div className="flex justify-around mt-10 flex-wrap">
+        <Image
+          className="rounded-full"
+          src="/me.jpg"
+          alt="my-image"
+          width={400}
+          height={400}
+        />
+        <div className="ml-5 max-w-2xl">
+          <p className="font-sans text-2xl">Hello, Im</p>
+          <h3 className="text-5xl">Abdug'affor Abdurakhimov</h3>
+          <p className="text-2xl my-2">you can call me Abdul</p>
+          <p>
+            I'm a passionate and experienced React, Next.js, and React Native
+            Developer with over 3 years of expertise in creating robust and
+            scalable web and mobile applications.
+          </p>
+        </div>
+      </div>
       <h4>Who am I ?</h4>
-      <br />
-      <p>
-        <span>
-          👋 Hi there! My name is Abdug'affor but you can call me Abdul and welcome
-          to my website. I'm a passionate and experienced React, Next.js, and
-          React Native Developer with over 3 years of expertise in creating
-          robust and scalable web and mobile applications.
-        </span>
-      </p>
       <br />
 
       <p>
