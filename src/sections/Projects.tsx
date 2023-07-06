@@ -162,14 +162,14 @@ export default function Projects() {
 
               <div>
                 <a
-                  className="mx-2 font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                  className="mx-2 font-medium text-blue-500 dark:text-blue-400 hover:underline"
                   href={project.feUrl}
                 >
                   Github frontend
                 </a>
                 {project.beUrl && (
                   <Link
-                    className="mx-2 font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                    className="mx-2 font-medium text-blue-500 dark:text-blue-400 hover:underline"
                     href={project.beUrl}
                   >
                     Github backend
@@ -177,7 +177,7 @@ export default function Projects() {
                 )}
                 {project.liveUrl && (
                   <Link
-                    className="mx-2 font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                    className="mx-2 font-medium text-blue-500 dark:text-blue-400 hover:underline"
                     href={project.liveUrl}
                   >
                     See Live

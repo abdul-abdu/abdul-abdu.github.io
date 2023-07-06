@@ -1,4 +1,3 @@
-import { MainLayout } from "@/components"
 import { IDS } from "@/constants"
 import Image from "next/image"
 
