@@ -14,7 +14,9 @@ export default function About() {
         />
         <div className="ml-5 max-w-2xl">
           <p className="font-sans text-2xl">Hello, Im</p>
-          <h3 className="text-5xl animate__animated animate__bounce">Abdug'affor Abdurakhimov</h3>
+          <h3 className="text-5xl animate__animated animate__bounce">
+            Abdug'affor Abdurakhimov
+          </h3>
           <p className="text-2xl my-2">you can call me Abdul</p>
           <p>
             I'm a passionate and experienced React, Next.js, and React Native
@@ -98,34 +100,7 @@ export default function About() {
           </span>
         </li>
       </ul>
-
       <br />
-      <p>
-        <span>
-          📢 I pride myself on my strong communication skills, attention to
-          detail, and ability to meet deadlines. I thrive on tackling new
-          challenges and believe in fostering collaborative relationships with
-          clients to deliver successful projects.
-        </span>
-      </p>
-
-      <p>
-        <span>
-          💬 If you're looking for a dedicated and skilled React, React Native,
-          and Next.js Developer to bring your ideas to life, let's connect! I'm
-          open to exciting opportunities and passionate about contributing to
-          the success of your projects.
-        </span>
-      </p>
-
-      <br />
-      <p>
-        <span>
-          📫 Feel free to reach out to me here on LinkedIn or through my contact
-          information below. Thank you for visiting my profile, and I look
-          forward to connecting with you!
-        </span>
-      </p>
     </section>
   )
 }
