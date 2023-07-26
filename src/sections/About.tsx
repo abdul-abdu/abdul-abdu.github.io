@@ -14,7 +14,7 @@ export default function About() {
         />
         <div className="ml-5 max-w-2xl">
           <p className="font-sans text-2xl">Hello, Im</p>
-          <h3 className="text-5xl">Abdug'affor Abdurakhimov</h3>
+          <h3 className="text-5xl animate__animated animate__bounce">Abdug'affor Abdurakhimov</h3>
           <p className="text-2xl my-2">you can call me Abdul</p>
           <p>
             I'm a passionate and experienced React, Next.js, and React Native

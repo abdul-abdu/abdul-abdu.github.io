@@ -61,8 +61,8 @@ Automation Engineering
   <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=abdul-abdu&hide=java,html&title_color=ffffff&text_color=ffffff&icon_color=2bbc8a&bg_color=1d1f21" />
 </a>
 
-<!--
-**abdugaffor-abdurahimov/abdugaffor-abdurahimov** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+
+**abdul-abdu/abdul-abdu** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
 Here are some ideas to get you started:
 
@@ -74,4 +74,4 @@ Here are some ideas to get you started:
 - 📫 How to reach me: ...
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
--->
+

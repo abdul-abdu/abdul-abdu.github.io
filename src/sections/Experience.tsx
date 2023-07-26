@@ -126,7 +126,7 @@ function ExperienceItem({
         </Link>
       </span>
       <div className="ml-5 my-5">
-        <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+        <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white animate__animated animate__bounce">
           {title} at
           <a className="ml-2" href={href}>
             {companyName}
