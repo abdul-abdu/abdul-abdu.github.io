@@ -14,11 +14,6 @@ const ITEMS = [
   },
   {
     id: 3,
-    title: "Projects",
-    href: `#${IDS.PROJECTS}`,
-  },
-  {
-    id: 4,
     title: "Contact",
     href: `#${IDS.FOOTER}`,
   },

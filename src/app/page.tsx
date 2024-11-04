@@ -8,7 +8,6 @@ export default function Home() {
       <Navbar />
       <About />
       <Experience />
-      <Projects />
       <Footer />
       <Particles
         className="absolute inset-0 -z-10 animate-fade-in"
