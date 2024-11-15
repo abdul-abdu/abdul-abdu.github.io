@@ -1,190 +1,101 @@
 "use client";
 
-import {
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuItems,
-} from "@headlessui/react";
-import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Dialog, DialogPanel } from "@headlessui/react";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { SearchButton } from "./SearchButton";
+import { Logo } from "./icons";
 
 const nav_links = [
-  { path: "/", name: "Home" },
-  { path: "/blog", name: "Blog" },
+  { href: "/", name: "Home" },
+  { href: "/blog", name: "Blog" },
+  { href: "/about", name: "About" },
 ];
 
 export default function Navbar() {
-  const pathname = usePathname();
-  const isActive = (path: string) => pathname.startsWith(path);
-  console.log({ pathname });
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <Disclosure as="nav" className="bg-white shadow">
-      <div className="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
-        <div className="flex h-16 justify-between">
-          <div className="flex px-2 lg:px-0">
-            {/* <div className="flex shrink-0 items-center">
+    <header className="bg-white border-b">
+      <nav
+        aria-label="Global"
+        className="mx-auto flex max-w-7xl items-center justify-between gap-x-6 p-6 lg:px-8"
+      >
+        <div className="flex lg:flex-1">
+          <Link href="#" className="-m-1.5 p-1.5">
+            <span className="sr-only">Your Company</span>
+            <Logo />
+          </Link>
+        </div>
+        <div className="hidden lg:flex lg:gap-x-12">
+          {nav_links.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className="text-sm/6 font-semibold text-gray-900"
+            >
+              {item.name}
+            </Link>
+          ))}
+        </div>
+        <div className="flex flex-1 items-center justify-end gap-x-6">
+          <SearchButton />
+        </div>
+        <div className="flex lg:hidden">
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen(true)}
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+          >
+            <span className="sr-only">Open main menu</span>
+            <Bars3Icon aria-hidden="true" className="size-6" />
+          </button>
+        </div>
+      </nav>
+      <Dialog
+        open={mobileMenuOpen}
+        onClose={setMobileMenuOpen}
+        className="lg:hidden"
+      >
+        <div className="fixed inset-0 z-10" />
+        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <div className="flex items-center gap-x-6">
+            <Link href="#" className="-m-1.5 p-1.5">
+              <span className="sr-only">Your Company</span>
               <img
-                alt="Your Company"
+                alt=""
                 src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
                 className="h-8 w-auto"
               />
-            </div> */}
-            <div className="hidden lg:ml-6 lg:flex lg:space-x-8">
-              {nav_links.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.path}
-                  className={`inline-flex items-center border-b-2 ${
-                    isActive(link.path)
-                      ? "border-indigo-500"
-                      : "border-transparent"
-                  }  px-1 pt-1 text-sm font-medium text-gray-900`}
-                >
-                  {link.name}
-                </Link>
-              ))}
-            </div>
-          </div>
-          <div className="flex flex-1 items-center justify-center px-2 lg:ml-6 lg:justify-end">
-            <div className="w-full max-w-lg lg:max-w-xs">
-              <label htmlFor="search" className="sr-only">
-                Search
-              </label>
-              <div className="relative">
-                <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                  <MagnifyingGlassIcon
-                    aria-hidden="true"
-                    className="size-5 text-gray-400"
-                  />
-                </div>
-                <input
-                  id="search"
-                  name="search"
-                  type="search"
-                  placeholder="Search"
-                  className="block w-full rounded-md border-0 bg-white py-1.5 pl-10 pr-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="flex items-center lg:hidden">
-            {/* Mobile menu button */}
-            <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-              <span className="absolute -inset-0.5" />
-              <span className="sr-only">Open main menu</span>
-              <Bars3Icon
-                aria-hidden="true"
-                className="block size-6 group-data-[open]:hidden"
-              />
-              <XMarkIcon
-                aria-hidden="true"
-                className="hidden size-6 group-data-[open]:block"
-              />
-            </DisclosureButton>
-          </div>
-          <div className="hidden lg:ml-4 lg:flex lg:items-center">
+            </Link>
+            <SearchButton />
             <button
               type="button"
-              className="relative shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              onClick={() => setMobileMenuOpen(false)}
+              className="-m-2.5 rounded-md p-2.5 text-gray-700"
             >
-              <span className="absolute -inset-1.5" />
-              <span className="sr-only">View notifications</span>
-              <BellIcon aria-hidden="true" className="size-6" />
+              <span className="sr-only">Close menu</span>
+              <XMarkIcon aria-hidden="true" className="size-6" />
             </button>
           </div>
-        </div>
-      </div>
-
-      <DisclosurePanel className="lg:hidden">
-        <div className="space-y-1 pb-3 pt-2">
-          {/* Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800" */}
-          <DisclosureButton
-            as="a"
-            href="#"
-            className="block border-l-4 border-indigo-500 bg-indigo-50 py-2 pl-3 pr-4 text-base font-medium text-indigo-700"
-          >
-            Dashboard
-          </DisclosureButton>
-          <DisclosureButton
-            as="a"
-            href="#"
-            className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800"
-          >
-            Team
-          </DisclosureButton>
-          <DisclosureButton
-            as="a"
-            href="#"
-            className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800"
-          >
-            Projects
-          </DisclosureButton>
-          <DisclosureButton
-            as="a"
-            href="#"
-            className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800"
-          >
-            Calendar
-          </DisclosureButton>
-        </div>
-        <div className="border-t border-gray-200 pb-3 pt-4">
-          <div className="flex items-center px-4">
-            <div className="shrink-0">
-              <img
-                alt=""
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                className="size-10 rounded-full"
-              />
-            </div>
-            <div className="ml-3">
-              <div className="text-base font-medium text-gray-800">
-                Tom Cook
-              </div>
-              <div className="text-sm font-medium text-gray-500">
-                tom@example.com
+          <div className="mt-6 flow-root">
+            <div className="-my-6 divide-y divide-gray-500/10">
+              <div className="space-y-2 py-6">
+                {nav_links.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                  >
+                    {item.name}
+                  </Link>
+                ))}
               </div>
             </div>
-            <button
-              type="button"
-              className="relative ml-auto shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-            >
-              <span className="absolute -inset-1.5" />
-              <span className="sr-only">View notifications</span>
-              <BellIcon aria-hidden="true" className="size-6" />
-            </button>
           </div>
-          <div className="mt-3 space-y-1">
-            <DisclosureButton
-              as="a"
-              href="#"
-              className="block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800"
-            >
-              Your Profile
-            </DisclosureButton>
-            <DisclosureButton
-              as="a"
-              href="#"
-              className="block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800"
-            >
-              Settings
-            </DisclosureButton>
-            <DisclosureButton
-              as="a"
-              href="#"
-              className="block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800"
-            >
-              Sign out
-            </DisclosureButton>
-          </div>
-        </div>
-      </DisclosurePanel>
-    </Disclosure>
+        </DialogPanel>
+      </Dialog>
+    </header>
   );
 }
