@@ -5,7 +5,6 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { useState } from "react";
 import { SearchButton } from "./SearchButton";
-import { Logo } from "./icons";
 
 const nav_links = [
   { href: "/", name: "Home" },
@@ -22,18 +21,12 @@ export default function Navbar() {
         aria-label="Global"
         className="mx-auto flex max-w-7xl items-center justify-between gap-x-6 p-6 lg:px-8"
       >
-        <div className="flex lg:flex-1">
-          <Link href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
-            <Logo />
-          </Link>
-        </div>
         <div className="hidden lg:flex lg:gap-x-12">
           {nav_links.map((item) => (
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm/6 font-semibold text-gray-900"
+              className="text-sm/6 font-semibold text-gray-900 hover:text-primary-500"
             >
               {item.name}
             </Link>
@@ -60,16 +53,7 @@ export default function Navbar() {
       >
         <div className="fixed inset-0 z-10" />
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-          <div className="flex items-center gap-x-6">
-            <Link href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
-              <img
-                alt=""
-                src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
-                className="h-8 w-auto"
-              />
-            </Link>
-            <SearchButton />
+          <div className="flex items-center justify-end gap-x-6">
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}

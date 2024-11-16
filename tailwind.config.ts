@@ -13,7 +13,7 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        primary: colors.orange,
+        primary: colors.blue,
       },
       fontFamily: {
         sans: ["InterVariable", ...defaultTheme.fontFamily.sans],
