@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { KBar } from "@/providers";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Sleek Templates",
