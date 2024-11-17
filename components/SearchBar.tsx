@@ -1,26 +1,18 @@
-export function SearchButton() {
+export function KBarSearchButton() {
   return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 20 20"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M8.76 11.24C6.42 8.9 6.42 5.09999 8.76 2.74999C11.1 0.409995 14.9 0.409995 17.25 2.74999C19.59 5.08999 19.59 8.89 17.25 11.24C14.91 13.58 11.11 13.58 8.76 11.24Z"
-        stroke="black"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+    <div className="relative flex items-center">
+      <input
+        id="search"
+        name="search"
+        placeholder="Search.."
+        type="text"
+        className="block w-full rounded-md border-0 py-1.5 pr-14 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-500 sm:text-sm/6"
       />
-      <path
-        d="M8.5 11.5L1 19"
-        stroke="black"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
+      <div className="absolute inset-y-0 right-0 flex py-1.5 pr-1.5">
+        <kbd className="inline-flex items-center rounded border border-gray-200 px-1 font-sans text-xs text-gray-400">
+          ⌘K
+        </kbd>
+      </div>
+    </div>
   );
 }
