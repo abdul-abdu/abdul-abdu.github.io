@@ -2,14 +2,7 @@ import { SVGProps } from "react";
 
 export function Facebook(svgProps: SVGProps<SVGSVGElement>) {
   return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 20 20"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...svgProps}
-    >
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" {...svgProps}>
       <path
         d="M20 10C20 4.48 15.52 0 10 0C4.48 0 0 4.48 0 10C0 14.84 3.44 18.87 8 19.8V13H6V10H8V7.5C8 5.57 9.57 4 11.5 4H14V7H12C11.45 7 11 7.45 11 8V10H14V13H11V19.95C16.05 19.45 20 15.19 20 10Z"
         fill="black"
@@ -20,14 +13,7 @@ export function Facebook(svgProps: SVGProps<SVGSVGElement>) {
 
 export function Github(svgProps: SVGProps<SVGSVGElement>) {
   return (
-    <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...svgProps}
-    >
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...svgProps}>
       <path
         d="M12 2C10.6868 2 9.38642 2.25866 8.17317 2.7612C6.95991 3.26375 5.85752 4.00035 4.92893 4.92893C3.05357 6.8043 2 9.34784 2 12C2 16.42 4.87 20.17 8.84 21.5C9.34 21.58 9.5 21.27 9.5 21V19.31C6.73 19.91 6.14 17.97 6.14 17.97C5.68 16.81 5.03 16.5 5.03 16.5C4.12 15.88 5.1 15.9 5.1 15.9C6.1 15.97 6.63 16.93 6.63 16.93C7.5 18.45 8.97 18 9.54 17.76C9.63 17.11 9.89 16.67 10.17 16.42C7.95 16.17 5.62 15.31 5.62 11.5C5.62 10.39 6 9.5 6.65 8.79C6.55 8.54 6.2 7.5 6.75 6.15C6.75 6.15 7.59 5.88 9.5 7.17C10.29 6.95 11.15 6.84 12 6.84C12.85 6.84 13.71 6.95 14.5 7.17C16.41 5.88 17.25 6.15 17.25 6.15C17.8 7.5 17.45 8.54 17.35 8.79C18 9.5 18.38 10.39 18.38 11.5C18.38 15.32 16.04 16.16 13.81 16.41C14.17 16.72 14.5 17.33 14.5 18.26V21C14.5 21.27 14.66 21.59 15.17 21.5C19.14 20.16 22 16.42 22 12C22 10.6868 21.7413 9.38642 21.2388 8.17317C20.7362 6.95991 19.9997 5.85752 19.0711 4.92893C18.1425 4.00035 17.0401 3.26375 15.8268 2.7612C14.6136 2.25866 13.3132 2 12 2Z"
         fill="black"
@@ -38,14 +24,7 @@ export function Github(svgProps: SVGProps<SVGSVGElement>) {
 
 export function Linkedin(svgProps: SVGProps<SVGSVGElement>) {
   return (
-    <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...svgProps}
-    >
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" {...svgProps}>
       <path
         d="M19 3C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H19ZM18.5 18.5V13.2C18.5 12.3354 18.1565 11.5062 17.5452 10.8948C16.9338 10.2835 16.1046 9.94 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17C14.6813 12.17 15.0374 12.3175 15.2999 12.5801C15.5625 12.8426 15.71 13.1987 15.71 13.57V18.5H18.5ZM6.88 8.56C7.32556 8.56 7.75288 8.383 8.06794 8.06794C8.383 7.75288 8.56 7.32556 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19C6.43178 5.19 6.00193 5.36805 5.68499 5.68499C5.36805 6.00193 5.19 6.43178 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56ZM8.27 18.5V10.13H5.5V18.5H8.27Z"
         fill="black"
@@ -56,14 +35,7 @@ export function Linkedin(svgProps: SVGProps<SVGSVGElement>) {
 
 export function Mail(svgProps: SVGProps<SVGSVGElement>) {
   return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 20 20"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...svgProps}
-    >
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" {...svgProps}>
       <path
         d="M3.33329 16.6667C2.87496 16.6667 2.48274 16.5036 2.15663 16.1775C1.83051 15.8514 1.66718 15.4589 1.66663 15V5.00001C1.66663 4.54168 1.82996 4.14945 2.15663 3.82334C2.48329 3.49723 2.87551 3.3339 3.33329 3.33334H16.6666C17.125 3.33334 17.5175 3.49668 17.8441 3.82334C18.1708 4.15001 18.3338 4.54223 18.3333 5.00001V15C18.3333 15.4583 18.1702 15.8508 17.8441 16.1775C17.518 16.5042 17.1255 16.6672 16.6666 16.6667H3.33329ZM9.99996 10.8333L16.6666 6.66668V5.00001L9.99996 9.16668L3.33329 5.00001V6.66668L9.99996 10.8333Z"
         fill="black"
@@ -74,14 +46,7 @@ export function Mail(svgProps: SVGProps<SVGSVGElement>) {
 
 export function X(svgProps: SVGProps<SVGSVGElement>) {
   return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 20 20"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...svgProps}
-    >
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" {...svgProps}>
       <mask
         id="mask0_11_10"
         style={{ maskType: "luminance" }}
@@ -105,14 +70,7 @@ export function X(svgProps: SVGProps<SVGSVGElement>) {
 
 export function Youtube(svgProps: SVGProps<SVGSVGElement>) {
   return (
-    <svg
-      width="20"
-      height="16"
-      viewBox="0 0 20 16"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...svgProps}
-    >
+    <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg" {...svgProps}>
       <path d="M8 4.5L14 8L8 11.5V4.5Z" fill="black" />
       <path
         d="M10 1C19 1 19 1 19 8C19 15 19 15 10 15C1 15 1 15 1 8C1 1 1 1 10 1Z"
@@ -136,14 +94,7 @@ export function Threads(svgProps: SVGProps<SVGSVGElement>) {
 
 export function Instagram(svgProps: SVGProps<SVGSVGElement>) {
   return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 20 20"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...svgProps}
-    >
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" {...svgProps}>
       <path
         d="M5.8 0H14.2C17.4 0 20 2.6 20 5.8V14.2C20 15.7383 19.3889 17.2135 18.3012 18.3012C17.2135 19.3889 15.7383 20 14.2 20H5.8C2.6 20 0 17.4 0 14.2V5.8C0 4.26174 0.61107 2.78649 1.69878 1.69878C2.78649 0.61107 4.26174 0 5.8 0ZM5.6 2C4.64522 2 3.72955 2.37928 3.05442 3.05442C2.37928 3.72955 2 4.64522 2 5.6V14.4C2 16.39 3.61 18 5.6 18H14.4C15.3548 18 16.2705 17.6207 16.9456 16.9456C17.6207 16.2705 18 15.3548 18 14.4V5.6C18 3.61 16.39 2 14.4 2H5.6ZM15.25 3.5C15.5815 3.5 15.8995 3.6317 16.1339 3.86612C16.3683 4.10054 16.5 4.41848 16.5 4.75C16.5 5.08152 16.3683 5.39946 16.1339 5.63388C15.8995 5.8683 15.5815 6 15.25 6C14.9185 6 14.6005 5.8683 14.3661 5.63388C14.1317 5.39946 14 5.08152 14 4.75C14 4.41848 14.1317 4.10054 14.3661 3.86612C14.6005 3.6317 14.9185 3.5 15.25 3.5ZM10 5C11.3261 5 12.5979 5.52678 13.5355 6.46447C14.4732 7.40215 15 8.67392 15 10C15 11.3261 14.4732 12.5979 13.5355 13.5355C12.5979 14.4732 11.3261 15 10 15C8.67392 15 7.40215 14.4732 6.46447 13.5355C5.52678 12.5979 5 11.3261 5 10C5 8.67392 5.52678 7.40215 6.46447 6.46447C7.40215 5.52678 8.67392 5 10 5ZM10 7C9.20435 7 8.44129 7.31607 7.87868 7.87868C7.31607 8.44129 7 9.20435 7 10C7 10.7956 7.31607 11.5587 7.87868 12.1213C8.44129 12.6839 9.20435 13 10 13C10.7956 13 11.5587 12.6839 12.1213 12.1213C12.6839 11.5587 13 10.7956 13 10C13 9.20435 12.6839 8.44129 12.1213 7.87868C11.5587 7.31607 10.7956 7 10 7Z"
         fill="black"
@@ -154,14 +105,7 @@ export function Instagram(svgProps: SVGProps<SVGSVGElement>) {
 
 export function Medium(svgProps: SVGProps<SVGSVGElement>) {
   return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 20 20"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...svgProps}
-    >
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" {...svgProps}>
       <path
         d="M3.64329 6.05333C3.65377 5.95186 3.64022 5.84936 3.60374 5.7541C3.56725 5.65884 3.50887 5.5735 3.43329 5.50499L1.87663 3.61583V3.33333H6.70829L10.4433 11.5875L13.7266 3.33333H18.3333V3.61583L17.0025 4.89999C16.9459 4.94341 16.9023 5.00144 16.8763 5.06781C16.8503 5.13419 16.8429 5.2064 16.855 5.27666V14.7217C16.8429 14.7919 16.8503 14.8641 16.8763 14.9305C16.9023 14.9969 16.9459 15.0549 17.0025 15.0983L18.3025 16.3833V16.6667H11.7658V16.3842L13.1125 15.0675C13.245 14.9342 13.245 14.895 13.245 14.6917V7.05666L9.50163 16.635H8.99663L4.63829 7.05666V13.4767C4.60246 13.7458 4.69163 14.0183 4.87996 14.2133L6.63079 16.3533V16.635H1.66663V16.3533L3.41663 14.2133C3.50922 14.1167 3.57794 13.9998 3.6173 13.8719C3.65665 13.744 3.66555 13.6086 3.64329 13.4767V6.05333Z"
         fill="black"
@@ -172,14 +116,7 @@ export function Medium(svgProps: SVGProps<SVGSVGElement>) {
 
 export function DailyDev(svgProps: SVGProps<SVGSVGElement>) {
   return (
-    <svg
-      width="32"
-      height="18"
-      viewBox="0 0 32 18"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...svgProps}
-    >
+    <svg width="32" height="18" viewBox="0 0 32 18" fill="none" xmlns="http://www.w3.org/2000/svg" {...svgProps}>
       <g clipPath="url(#clip0_11_4)">
         <path
           d="M27.4791 8.9625L23.9466 5.4225L25.712 1.88387L31.4515 7.6355C32.1827 8.36837 32.1827 9.5565 31.4515 10.2892L24.3872 17.3685C23.656 18.1012 22.4702 18.1012 21.7389 17.3685C21.0076 16.6356 21.0076 15.4475 21.7389 14.7147L27.4791 8.9625Z"
@@ -199,6 +136,21 @@ export function DailyDev(svgProps: SVGProps<SVGSVGElement>) {
   );
 }
 
+export function IconSearch() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M8.76 11.24C6.42 8.9 6.42 5.09999 8.76 2.74999C11.1 0.409995 14.9 0.409995 17.25 2.74999C19.59 5.08999 19.59 8.89 17.25 11.24C14.91 13.58 11.11 13.58 8.76 11.24Z"
+        stroke="black"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path d="M8.5 11.5L1 19" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 const components = {
   mail: Mail,
   github: Github,
@@ -210,6 +162,7 @@ const components = {
   instagram: Instagram,
   medium: Medium,
   dailydev: DailyDev,
+  search: IconSearch,
 };
 
 type SocialIconProps = {
@@ -219,12 +172,7 @@ type SocialIconProps = {
 };
 
 export function SocialIcon({ kind, href, size = 8 }: SocialIconProps) {
-  if (
-    !href ||
-    (kind === "mail" &&
-      !/^mailto:[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(href))
-  )
-    return null;
+  if (!href || (kind === "mail" && !/^mailto:[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(href))) return null;
 
   const SocialSvg = components[kind];
   return (
