@@ -1,4 +1,5 @@
-import { SocialIcon } from "@/components/icons";
+import { SocialIcon, TSocialKeys } from "@/components/icons";
+import { socials } from "@/data/metadata";
 import Image from "next/image";
 
 export default function AboutPage() {
@@ -17,10 +18,11 @@ export default function AboutPage() {
             <div className="text-gray-500 dark:text-gray-400">Sowftware Engineer</div>
             <div className="text-gray-500 dark:text-gray-400">Danads</div>
             <div className="flex space-x-3 pt-6">
-              <SocialIcon kind="linkedin" href="https://x.com/abdul_abdurahim" />
-              <SocialIcon kind="facebook" href="https://x.com/abdul_abdurahim" />
-              <SocialIcon kind="instagram" href="https://x.com/abdul_abdurahim" />
-              <SocialIcon kind="dailydev" href="https://x.com/abdul_abdurahim" />
+              {Object.entries(socials)
+                .slice(0, 5)
+                .map(([social, link]) => (
+                  <SocialIcon kind={social as TSocialKeys} href={link} className="size-8" key={link} size={32} />
+                ))}
             </div>
           </div>
           <div className="prose max-w-none pb-8 pt-8 dark:prose-invert xl:col-span-2">

@@ -20,7 +20,7 @@ export default function RootLayout({
         <KBar>
           <Navbar />
           <section className="mx-auto max-w-7xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
-            <main className="mb-auto">{children}</main>
+            <main className="mb-auto my-5">{children}</main>
           </section>
           <Footer />
         </KBar>
