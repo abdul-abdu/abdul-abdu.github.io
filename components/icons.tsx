@@ -29,13 +29,13 @@ export function IconLinkedin(props: SVGProps<SVGSVGElement>) {
     <svg width="32" height="32" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg" {...props}>
       <path
         d="M9.25335 6.66666C9.25299 7.3739 8.9717 8.05204 8.47136 8.55189C7.97101 9.05173 7.29259 9.33234 6.58535 9.33199C5.8781 9.33164 5.19997 9.05035 4.70012 8.55C4.20027 8.04965 3.91966 7.37124 3.92001 6.66399C3.92037 5.95675 4.20166 5.27861 4.70201 4.77876C5.20235 4.27892 5.88077 3.9983 6.58801 3.99866C7.29526 3.99901 7.97339 4.2803 8.47324 4.78065C8.97309 5.281 9.2537 5.95941 9.25335 6.66666ZM9.33335 11.3067H4.00001V28H9.33335V11.3067ZM17.76 11.3067H12.4533V28H17.7067V19.24C17.7067 14.36 24.0667 13.9067 24.0667 19.24V28H29.3333V17.4267C29.3333 9.19999 19.92 9.50666 17.7067 13.5467L17.76 11.3067Z"
-        fill="black"
+        fill="currentColor"
       />
     </svg>
   );
 }
 
-export function Mail(svgProps: SVGProps<SVGSVGElement>) {
+export function IconMail(svgProps: SVGProps<SVGSVGElement>) {
   return (
     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" {...svgProps}>
       <path
@@ -66,7 +66,7 @@ export function IconYoutube(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-export function Threads(svgProps: SVGProps<SVGSVGElement>) {
+export function IconThreads(svgProps: SVGProps<SVGSVGElement>) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...svgProps}>
       <title>Threads</title>
@@ -87,7 +87,7 @@ export function IconInstagram(props: SVGProps<SVGSVGElement>) {
   );
 }
 
-export function Medium(props: SVGProps<SVGSVGElement>) {
+export function IconMedium(props: SVGProps<SVGSVGElement>) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
       <title>Medium</title>
@@ -102,11 +102,11 @@ export function IconDailyDev(props: SVGProps<SVGSVGElement>) {
       <g clipPath="url(#clip0_11_4)">
         <path
           d="M27.4791 8.9625L23.9466 5.4225L25.712 1.88387L31.4515 7.6355C32.1827 8.36837 32.1827 9.5565 31.4515 10.2892L24.3872 17.3685C23.656 18.1012 22.4702 18.1012 21.7389 17.3685C21.0076 16.6356 21.0076 15.4475 21.7389 14.7147L27.4791 8.9625Z"
-          fill="#7C7C7D"
+          fill="currentColor"
         />
         <path
           d="M21.7403 0.5495C22.4716 -0.183375 23.6576 -0.183 24.3889 0.54975L25.7133 1.877L10.2613 17.3615C9.53006 18.0944 8.34394 18.094 7.61268 17.3612L6.28818 16.034L21.7403 0.5495ZM15.1178 5.41625L12.4688 8.07075L8.93631 4.53075L4.52093 8.9555L8.05343 12.4954L6.28818 16.034L0.54856 10.2824C-0.18269 9.54963 -0.18269 8.36137 0.54856 7.62862L7.61256 0.549875C8.34381 -0.183 9.52981 -0.183375 10.2612 0.5495L15.1178 5.41625Z"
-          fill="#151618"
+          fill="currentColor"
         />
       </g>
       <defs>
@@ -134,15 +134,15 @@ export function IconSearch() {
 }
 
 const components = {
-  mail: Mail,
+  mail: IconMail,
   github: IconGithub,
   facebook: IconFacebook,
   youtube: IconYoutube,
   linkedin: IconLinkedin,
   x: IconX,
-  threads: Threads,
+  threads: IconThreads,
   instagram: IconInstagram,
-  medium: Medium,
+  medium: IconMedium,
   dailydev: IconDailyDev,
   search: IconSearch,
 };
