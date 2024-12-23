@@ -7,7 +7,10 @@ const actions = [
     name: "Blog",
     shortcut: ["b"],
     keywords: "writing words",
-    perform: () => (window.location.pathname = "blog"),
+
+    perform: () => {
+      console.log("testing");
+    },
   },
   {
     id: "contact",
@@ -24,7 +27,7 @@ export function KBar({ children }: { children: React.ReactNode }) {
       <KBarPortal>
         <KBarPositioner>
           <KBarAnimator>
-            <KBarSearch />
+            <KBarSearch onChange={() => console.log("CHAM")} />
           </KBarAnimator>
         </KBarPositioner>
       </KBarPortal>

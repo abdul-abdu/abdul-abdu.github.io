@@ -1,5 +1,5 @@
+import { socials } from "@data/metadata";
 import { SocialIcon, TSocialKeys } from "./icons";
-import { socials } from "@/data/metadata";
 
 export default function Footer() {
   return (

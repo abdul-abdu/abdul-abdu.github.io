@@ -1,5 +1,5 @@
-import { SocialIcon, TSocialKeys } from "@/components/icons";
-import { socials } from "@/data/metadata";
+import { SocialIcon, TSocialKeys } from "@components/icons";
+import { socials } from "@data/metadata";
 import Image from "next/image";
 
 export default function AboutPage() {
