@@ -1,0 +1,213 @@
+---
+title: "Adding Multilingual Support to a Next.js 15 App with Lingui"
+date: "2025-01-07"
+description: "Learn how to integrate Lingui to enable multilingual support in your Next.js 15 application."
+tags: ["Next.js", "Lingui", "i18n", "Multilingual"]
+---
+
+# Adding Multilingual Support to a Next.js 15 App with Lingui
+
+Adding multilingual support to your web application is crucial for reaching a global audience. In this post, we'll walk you through integrating the Lingui library into a Next.js 15 app to enable internationalization (i18n).
+
+## Prerequisites
+
+Before starting, ensure you have:
+
+- A basic Next.js 15 app set up.
+- Node.js and npm installed.
+
+## Step 1: Install Dependencies
+
+First, install the necessary Lingui packages and related dependencies:
+
+```bash
+npm install @lingui/core @lingui/macro @lingui/react negotiator
+npm install --save-dev @lingui/cli @lingui/loader @lingui/swc-plugin @types/negotiator
+```
+
+## Step 2: Configure Lingui
+
+Create a Lingui configuration file at the root of your project:
+
+```typescript
+// lingui.config.ts
+import type { LinguiConfig } from "@lingui/conf";
+
+const config: LinguiConfig = {
+  locales: ["en", "ar", "pseudo"],
+  pseudoLocale: "pseudo",
+  sourceLocale: "en",
+  fallbackLocales: {
+    default: "en",
+  },
+  catalogs: [
+    {
+      path: "locales/{locale}",
+      include: ["app/"],
+    },
+  ],
+};
+
+export default config;
+```
+
+## Step 3: Setup Middleware for Locale Detection
+
+Add a middleware file to handle locale detection and redirection based on the `accept-language` header:
+
+```typescript
+// middleware.ts
+import linguiConfig from "lingui.config";
+import Negotiator from "negotiator";
+import { type NextRequest, NextResponse } from "next/server";
+
+const { locales } = linguiConfig;
+
+export function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  const pathnameHasLocale = locales.some((locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`);
+
+  if (pathnameHasLocale) return;
+
+  const locale = getRequestLocale(request.headers);
+  request.nextUrl.pathname = `/${locale}${pathname}`;
+
+  return NextResponse.redirect(request.nextUrl);
+}
+
+function getRequestLocale(requestHeaders: Headers): string {
+  const langHeader = requestHeaders.get("accept-language") || undefined;
+  const languages = new Negotiator({
+    headers: { "accept-language": langHeader },
+  }).languages(locales.slice());
+
+  return languages[0] || locales[0] || "en";
+}
+
+export const config = {
+  matcher: ["/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)"],
+};
+```
+
+## Step 4: Update `next.config.ts`
+
+Modify your Next.js configuration to include Lingui's SWC plugin and custom loaders:
+
+```typescript
+// next.config.ts
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  experimental: {
+    swcPlugins: [["@lingui/swc-plugin", {}]],
+    turbo: {
+      rules: {
+        "*.po": {
+          loaders: ["@lingui/loader"],
+          as: "*.js",
+        },
+      },
+    },
+  },
+};
+
+export default nextConfig;
+```
+
+## Step 5: Setup App Router
+
+Move your routes into a `app/[lang]` directory and create necessary i18n utility files.
+
+### `appRouterI18n.ts`
+
+```typescript
+import "server-only";
+import { I18n, Messages, setupI18n } from "@lingui/core";
+import linguiConfig from "lingui.config";
+
+const { locales } = linguiConfig;
+
+type SupportedLocales = string;
+
+async function loadCatalog(locale: SupportedLocales): Promise<{
+  [k: string]: Messages;
+}> {
+  const { messages } = await import(`locales/${locale}.po`);
+  return {
+    [locale]: messages,
+  };
+}
+
+const catalogs = await Promise.all(locales.map(loadCatalog));
+
+export const allMessages = catalogs.reduce((acc, oneCatalog) => {
+  return { ...acc, ...oneCatalog };
+}, {});
+
+type AllI18nInstances = { [K in SupportedLocales]: I18n };
+
+export const allI18nInstances: AllI18nInstances = locales.reduce((acc, locale) => {
+  const messages = allMessages[locale] ?? {};
+  const i18n = setupI18n({
+    locale,
+    messages: { [locale]: messages },
+  });
+  return { ...acc, [locale]: i18n };
+}, {});
+
+export const getI18nInstance = (locale: SupportedLocales): I18n => {
+  if (!allI18nInstances[locale]) {
+    console.warn(`No i18n instance found for locale "${locale}"`);
+  }
+  return allI18nInstances[locale]! || allI18nInstances["en"]!;
+};
+```
+
+## Step 6: Client-Side i18n Provider
+
+Add a client-side provider to wrap your components:
+
+```typescript
+// LinguiClientProvider.tsx
+"use client";
+
+import { I18nProvider } from "@lingui/react";
+import { type Messages, setupI18n } from "@lingui/core";
+import { useState } from "react";
+
+export function LinguiClientProvider({
+  children,
+  initialLocale,
+  initialMessages,
+}: {
+  children: React.ReactNode;
+  initialLocale: string;
+  initialMessages: Messages;
+}) {
+  const [i18n] = useState(() => {
+    return setupI18n({
+      locale: initialLocale,
+      messages: { [initialLocale]: initialMessages },
+    });
+  });
+  return <I18nProvider i18n={i18n}>{children}</I18nProvider>;
+}
+```
+
+## Step 7: Extract and Compile Messages
+
+Run the following commands to extract and compile translations:
+
+```bash
+npm run lingui:extract
+npm run lingui:compile
+```
+
+### Add Translations
+
+Edit the `.po` files in `locales/ar` to add Arabic translations. Then recompile the catalogs.
+
+---
+
+With these steps, your Next.js 15 app is now equipped with multilingual support using Lingui! For more advanced features like dynamic locale loading, refer to the [Lingui documentation](https://lingui.dev).
