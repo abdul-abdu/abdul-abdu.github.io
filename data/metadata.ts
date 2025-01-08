@@ -1,4 +1,4 @@
-import { TSocialKeys } from "@/components/icons";
+import { TSocialKeys } from "@components/icons";
 
 export const settings = {
   theme: "system",
