@@ -11,7 +11,11 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata({
+  params,
+}: Readonly<{
+  params: Promise<{ slug: string }>;
+}>) {
   const { slug } = await params;
   const post = getBlogPosts().find((post) => post.slug === slug);
   if (!post) {
@@ -45,8 +49,13 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function Blog({ params }) {
-  const post = getBlogPosts().find((post) => post.slug === params.slug);
+export default async function Blog({
+  params,
+}: Readonly<{
+  params: Promise<{ slug: string }>;
+}>) {
+  const { slug } = await params;
+  const post = getBlogPosts().find((post) => post.slug === slug);
 
   if (!post) {
     notFound();
@@ -59,7 +68,6 @@ export default function Blog({ params }) {
         suppressHydrationWarning
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            "@context": "https://schema.org",
             "@type": "BlogPosting",
             headline: post.metadata.title,
             datePublished: post.metadata.date,
