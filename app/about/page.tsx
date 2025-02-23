@@ -19,7 +19,6 @@ export default function AboutPage() {
             <div className="text-gray-500 dark:text-gray-400">Danads</div>
             <div className="flex space-x-3 pt-6">
               {Object.entries(socials)
-                .slice(0, 5)
                 .map(([social, link]) => (
                   <SocialIcon kind={social as TSocialKeys} href={link} className="size-8" key={link} size={32} />
                 ))}
