@@ -1,7 +1,7 @@
 import createMDX from "@next/mdx";
+import type { NextConfig } from "next";
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
   transpilePackages: ["next-mdx-remote"],
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   output: "export",
@@ -14,5 +14,4 @@ const withMDX = createMDX({
   },
 });
 
-// Merge MDX config with Next.js config
-export default withMDX(nextConfig);
+export default withMDX(nextConfig) as NextConfig;
