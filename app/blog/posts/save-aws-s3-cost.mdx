@@ -1,0 +1,133 @@
+---
+title: "How I Reduced S3 Pricing by Compressing Images into WebP and Optimized Frontend Load Time"
+date: "2025-03-19"
+description: "Learn how to reduce AWS S3 storage and bandwidth costs by compressing images into WebP before uploading."
+tags: ["AWS S3", "WebP", "Next.js", "Image Optimization", "Frontend Performance"]
+image: "/s3-webp-optimization.jpg"
+---
+
+
+# How I Reduced S3 Pricing by Compressing Images into WebP and Optimized Frontend Load Time
+
+When hosting images on AWS S3, costs can quickly add up due to storage and bandwidth usage. To optimize both costs and performance, I implemented WebP image compression on the frontend before uploading files to S3. This approach significantly reduced image sizes, leading to lower storage costs and faster load times for users.
+
+## Why WebP?
+
+WebP is a modern image format that provides better compression than JPEG and PNG without compromising image quality. By converting images to WebP before uploading them to S3, I achieved:
+
+- **Reduced storage costs**: WebP images are smaller in size, meaning less data stored in S3.
+- **Faster page load times**: Smaller images lead to quicker downloads, improving the user experience.
+- **Lower data transfer costs**: Since WebP images are compressed efficiently, less data is transferred when loading images from S3.
+
+## Image Compression with WebP in the Browser
+
+To handle image compression on the frontend, I used the `canvas` API to convert uploaded images to WebP format before sending them to S3. Here’s the function I implemented:
+
+```typescript
+export const convertImagesWebP = async (files: File[]): Promise<File[]> => {
+  const convertedFiles = await Promise.all(
+    files.map(async (file) => {
+      // Create canvas and load image
+      const canvas = document.createElement("canvas");
+      const ctx = canvas.getContext("2d");
+      const img = new Image();
+
+      // Convert to WebP using canvas
+      return new Promise((resolve) => {
+        img.onload = () => {
+          canvas.width = img.width;
+          canvas.height = img.height;
+          ctx?.drawImage(img, 0, 0);
+          canvas.toBlob((blob) => {
+            if (blob) {
+              resolve(
+                new File([blob], file.name.replace(/\.[^/.]+$/, ".webp"), {
+                  type: "image/webp",
+                })
+              );
+            }
+          }, "image/webp");
+        };
+        img.src = URL.createObjectURL(file);
+      });
+    })
+  );
+  return convertedFiles as File[];
+};
+```
+
+### How It Works:
+
+1. The function accepts an array of `File` objects (uploaded images).
+2. It creates an `Image` element to load each file.
+3. A `canvas` is used to draw the image and convert it to WebP format.
+4. The converted image is returned as a new `File` object with a `.webp` extension.
+
+I'm using Next.js for the frontend and AWS Lambda functions as the API
+
+Im converting images on frontend side to remove extra heavy load from aws lambda here what its look like:
+
+```
+<input
+  id="image"
+  name="image"
+  accept="image/*"
+  type="file"
+  multiple={true}
+  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+  onChange={async (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const files = await convertImagesWebP(
+      Array.from(e.target.files || [])
+    );
+    setSelectedImages(files);
+  }}
+/>
+```
+
+In lambda side creating presignedUrls for each image name and returning to frontend as this
+
+```
+const presignedUrls = await Promise.all(
+    images.map(async (imageName: string) => {
+        const command = new PutObjectCommand({
+            Bucket: BUCKET_NAME,
+            Key: `${tenantId}/${product.id}/${imageName}`,
+            ContentType: 'image/*',
+        })
+        const presignedUrl = await getSignedUrl(s3Client, command, { expiresIn: 3600 })
+        return presignedUrl
+    }),
+)
+
+```
+
+In the end, I'm uploading to S3 like this on the frontend:
+
+```
+await Promise.all(
+        responce.presignedUrls.map(async (presignedUrl, index) => {
+          const imageFile = selectedImages[index];
+          await axios.put(presignedUrl, imageFile, {
+            headers: {
+              "Content-Type": imageFile.type,
+            },
+          });
+        })
+      );
+```
+
+## Uploading to S3
+
+After converting the images to WebP, they can be uploaded to S3 using pre-signed URLs or an API endpoint. Since WebP images are smaller, this reduces the amount of data stored in S3 and decreases egress costs when images are accessed by users.
+
+## Results and Benefits
+
+After implementing this solution, I observed:
+
+- **Up to 50% reduction in S3 storage costs**.
+- **Significantly improved website load times** due to smaller image sizes.
+- **Lower CDN and bandwidth costs** when serving images to users.
+
+By optimizing image storage and delivery with WebP, I not only reduced operational expenses but also enhanced the user experience. If you're using S3 for image hosting, I highly recommend compressing images into WebP before uploading!
