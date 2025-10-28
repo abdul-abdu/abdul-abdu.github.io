@@ -10,7 +10,7 @@ export const socials: Partial<Record<TSocialKeys, string>> = {
   // facebook: "https://www.facebook.com/abdugaffor.abdurahimov.1/",
   // instagram: "https://www.instagram.com/abdugaffor_abdurahim/",
   // youtube: "https://www.youtube.com/@abdul-abdu",
-  medium: "https://medium.com/@abdurohim",
+  medium: "https://medium.com/@abdul-a",
   // dailydev: "https://app.daily.dev/abdul_a",
   github: "https://github.com/abdul-abdu",
 };
